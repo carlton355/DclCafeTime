@@ -1,0 +1,9 @@
+heroku login
+heroku create -a dcl-scene-init
+heroku git:remote -a dcl-scene-init
+change the start script to "CI=true dcl start -p ${PORT:=8000}"
+
+if required:
+npm i --save decentraland
+git push heroku main
+heroku logs --tail
